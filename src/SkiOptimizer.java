@@ -14,7 +14,6 @@ public class SkiOptimizer {
 
 	//Processes the map.txt file to get the elevation of each node
 	private void processFile(){
-		//Path path = Paths.get("map.txt");
 		try {
 			File file = new File("map.txt");			
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -49,9 +48,6 @@ public class SkiOptimizer {
 
 	}
 
-	//For every node, look at its four neighbours (north, south, east, west), and for each of its neighbours
-	//update the node's own elevation difference and increment the number of nodes below it if it's 
-	//
 	public void updateNode(int i, int j){
 		System.out.println("Evaluating Node at Row " + i + ", Col " + j);
 		
