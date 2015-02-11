@@ -158,6 +158,7 @@ public class SkiOptimizer {
 				SkiNode node = skiNodeMatrix[j][k];
 				if (node.getHighestPathLength() > overallHighestPathLength){
 					overallHighestPathLength = node.getHighestPathLength();
+					overallHighestElevation = node.getNodeElevation() - node.getElevationOfLowestNode();
 				}else if (node.getHighestPathLength() == overallHighestPathLength){
 					if ((node.getNodeElevation() - node.getElevationOfLowestNode()) > overallHighestElevation){
 						overallHighestElevation = node.getNodeElevation() - node.getElevationOfLowestNode();
@@ -212,7 +213,7 @@ public class SkiOptimizer {
 		System.out.println("Highest Path Length: " + (overallHighestPathLength + 1));
 		System.out.println("Highest Elevation: " + overallHighestElevation);
 		long endTime = System.currentTimeMillis();
-		System.out.println("Time taken to compute path: " + ((endTime-startTime)/100) + "s");
+		System.out.println("Time taken to compute path: " + ((endTime-startTime)/1000) + "s");
 	}
 
 }
